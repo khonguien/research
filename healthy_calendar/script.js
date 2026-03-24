@@ -20,7 +20,7 @@ const db = getDatabase(app);
 // ==========================================
 // 2. BIẾN GLOBAL & TRẠNG THÁI
 // ==========================================
-let usersList = ["Khoi Nguyen"];
+let usersList = [];
 let currentUser = localStorage.getItem('appCurrentUser') || "Khoi Nguyen";
 let currentSelectedDay = new Date().getDate();
 let tasksData = {};
@@ -30,16 +30,17 @@ let waterUnsubscribe = null;
 const defaultSuggestedTasks = ["💧 Uống đủ 2L nước", "🚫 Không uống đồ ngọt", "🚶 Đi đủ 7000 bước"];
 
 // ==========================================
-// 3. GẮN HÀM VÀO WINDOW (Cho HTML gọi được)
+// 3. GẮN HÀM VÀO WINDOW (SỬA LỖI XÓA USER)
 // ==========================================
+
 window.handleUserChange = function() {
     const select = document.getElementById('userSelect');
     if (select.value === "ADD_NEW") {
         const newName = prompt("Nhập tên người dùng mới:");
         if (newName && newName.trim() !== "" && !usersList.includes(newName.trim())) {
-            usersList.push(newName.trim());
+            const newList = [...usersList, newName.trim()];
             currentUser = newName.trim();
-            set(ref(db, 'users'), usersList); 
+            set(ref(db, 'users'), newList); 
         } 
     } else {
         currentUser = select.value;
@@ -47,6 +48,44 @@ window.handleUserChange = function() {
     localStorage.setItem('appCurrentUser', currentUser);
     loadWaterDataOnline();
     renderTasks(currentSelectedDay);
+};
+
+// --- HÀM XÓA USER ĐÃ FIX ---
+window.deleteCurrentUser = function() {
+    if (usersList.length <= 1) {
+        alert("Phải có ít nhất 1 người dùng trong hệ thống. Bạn không thể xóa!");
+        return;
+    }
+
+    const userToDelete = currentUser; // Lưu lại tên người cần xóa
+    if (confirm(`⚠️ CẢNH BÁO: Bạn có chắc muốn xóa vĩnh viễn người dùng [${userToDelete}]? Dữ liệu nước sẽ bị xóa sạch.`)) {
+        
+        // 1. Tạo danh sách mới sau khi lọc bỏ người dùng cũ
+        const newUsersList = usersList.filter(u => u !== userToDelete);
+
+        // 2. Chuyển ngay sang người dùng đầu tiên trong danh sách còn lại
+        currentUser = newUsersList[0];
+        localStorage.setItem('appCurrentUser', currentUser);
+
+        // 3. Cập nhật Firebase
+        // Xóa data nước của user đó
+        set(ref(db, `water/${userToDelete}`), null);
+        // Cập nhật lại danh sách users
+        set(ref(db, 'users'), newUsersList)
+            .then(() => {
+                alert(`Đã xóa thành công: ${userToDelete}`);
+                loadWaterDataOnline(); // Load lại data nước cho user mới
+                renderTasks(currentSelectedDay);
+            })
+            .catch(err => alert("Lỗi khi xóa dữ liệu trên Cloud: " + err.message));
+    }
+};
+
+window.selectDay = (el, day) => {
+    currentSelectedDay = day;
+    document.querySelectorAll('.day').forEach(d => d.classList.remove('active'));
+    el.classList.add('active');
+    renderTasks(day);
 };
 
 window.addTask = function() {
@@ -78,56 +117,11 @@ window.deleteTask = function(day, index) {
     set(ref(db, 'tasks'), tasksData);
 };
 
-window.selectDay = (el, day) => {
-    currentSelectedDay = day;
-    document.querySelectorAll('.day').forEach(d => d.classList.remove('active'));
-    el.classList.add('active');
-    renderTasks(day);
-};
-
 window.handleKeyPress = (e) => { if (e.key === "Enter") window.addTask(); };
 window.toggleWaterModal = () => document.getElementById('waterModalOverlay').classList.toggle('open');
 
-// --- CÁC HÀM NƯỚC (WATER) ---
-window.calculateGoal = function() {
-    const weight = parseFloat(document.getElementById('weightInput').value);
-    if (isNaN(weight) || weight <= 0) { document.getElementById('weightError').style.display = 'block'; return; }
-    document.getElementById('weightError').style.display = 'none';
-    const minL = weight * 0.03; const maxL = weight * 0.04;
-    document.getElementById('waterRecommendationText').innerHTML = `💡 Cần uống từ <b>${minL.toFixed(1)}L - ${maxL.toFixed(1)}L</b> mỗi ngày.`;
-    const select = document.getElementById('goalSelect'); select.innerHTML = ''; 
-    for (let i = Math.ceil(minL * 10); i <= Math.floor(maxL * 10); i++) {
-        const val = (i / 10).toFixed(1); select.innerHTML += `<option value="${val}">${val} L</option>`;
-    }
-    document.getElementById('goalSelectionArea').style.display = 'block';
-};
-
-window.goToScreenBottle = () => {
-    waterData.goalLiters = parseFloat(document.getElementById('goalSelect').value);
-    set(ref(db, `water/${currentUser}`), waterData);
-};
-
-window.goToScreenTracker = () => {
-    const ml = parseInt(document.getElementById('bottleInput').value);
-    if (isNaN(ml) || ml <= 0) { document.getElementById('bottleError').style.display = 'block'; return; }
-    waterData.bottleVolLiters = ml / 1000;
-    set(ref(db, `water/${currentUser}`), waterData);
-};
-
-window.addBottle = () => {
-    waterData.consumedLiters += waterData.bottleVolLiters;
-    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    if(!waterData.history) waterData.history = [];
-    waterData.history.unshift({ text: `💦 Đã uống ${waterData.bottleVolLiters * 1000}ml`, time: time });
-    set(ref(db, `water/${currentUser}`), waterData);
-};
-
-window.resetWaterApp = () => {
-    if(confirm("Cài đặt lại app nước?")) set(ref(db, `water/${currentUser}`), null);
-};
-
 // ==========================================
-// 4. HIỂN THỊ UI
+// 4. HÀM HIỂN THỊ UI
 // ==========================================
 function renderUserDropdown() {
     const select = document.getElementById('userSelect');
@@ -150,7 +144,6 @@ function renderTasks(day) {
     const progress = document.getElementById('progressBarsContainer');
     if(!taskList) return;
 
-    // Thanh %
     if(progress) {
         progress.innerHTML = usersList.map(user => {
             const uTasks = tasks.filter(t => t.owner === user);
@@ -160,7 +153,6 @@ function renderTasks(day) {
         }).join('');
     }
 
-    // Danh sách Task
     taskList.innerHTML = tasks.length === 0 ? `<p style="text-align:center; color:#8e8e93; margin-top:20px;">Chưa có công việc nào.</p>` : "";
     tasks.forEach((t, i) => {
         taskList.innerHTML += `
@@ -175,7 +167,7 @@ function renderTasks(day) {
 }
 
 // ==========================================
-// 5. ĐỒNG BỘ REAL-TIME (LẮNG NGHE MÂY)
+// 5. ĐỒNG BỘ REAL-TIME (FIREBASE)
 // ==========================================
 function loadWaterDataOnline() {
     if(waterUnsubscribe) waterUnsubscribe();
@@ -188,18 +180,20 @@ function loadWaterDataOnline() {
                 waterData.consumedLiters = 0; waterData.history = []; waterData.lastDate = today;
                 set(ref(db, `water/${currentUser}`), waterData);
             }
-            // Update UI
-            document.getElementById('consumedText').textContent = waterData.consumedLiters.toFixed(2);
-            document.getElementById('goalText').textContent = waterData.goalLiters.toFixed(1);
-            const p = (waterData.consumedLiters / waterData.goalLiters) * 100;
-            document.getElementById('progressBar').style.width = Math.min(p, 100) + '%';
-            document.getElementById('historyList').innerHTML = (waterData.history || []).map(h => `<li><span>${h.text}</span><span class="time-badge">${h.time}</span></li>`).join('');
-            document.getElementById('historyContainer').style.display = waterData.history?.length ? 'block' : 'none';
-            document.getElementById('userNameDisplay').textContent = currentUser;
-            document.querySelectorAll('.water-screen').forEach(s => s.classList.remove('active'));
-            document.getElementById(waterData.goalLiters > 0 ? (waterData.bottleVolLiters > 0 ? 'screen-tracker' : 'screen-bottle') : 'screen-goal').classList.add('active');
+            updateWaterUI();
+        } else {
+            waterData = { goalLiters: 0, bottleVolLiters: 0, consumedLiters: 0, history: [], lastDate: today };
         }
     });
+}
+
+function updateWaterUI() {
+    if(!document.getElementById('consumedText')) return;
+    document.getElementById('consumedText').textContent = waterData.consumedLiters.toFixed(2);
+    document.getElementById('goalText').textContent = waterData.goalLiters.toFixed(1);
+    const p = (waterData.consumedLiters / (waterData.goalLiters || 1)) * 100;
+    document.getElementById('progressBar').style.width = Math.min(p, 100) + '%';
+    document.getElementById('userNameDisplay').textContent = currentUser;
 }
 
 // KHỞI CHẠY
@@ -209,8 +203,21 @@ window.onload = () => {
     if(container) container.innerHTML = defaultSuggestedTasks.map(t => `<button class="suggested-task-btn" onclick="window.addSpecificTaskOnline('${t}')">+ ${t}</button>`).join('');
 
     onValue(ref(db, 'users'), (snap) => {
-        usersList = snap.val() || ["Khoi Nguyen"];
+        const data = snap.val();
+        if (data) {
+            usersList = data;
+            // Nếu User hiện tại bị ai đó xóa ở máy khác, tự nhảy về User đầu tiên
+            if (!usersList.includes(currentUser)) {
+                currentUser = usersList[0];
+                localStorage.setItem('appCurrentUser', currentUser);
+                loadWaterDataOnline();
+            }
+        } else {
+            usersList = ["Khoi Nguyen"];
+            set(ref(db, 'users'), usersList);
+        }
         renderUserDropdown();
+        renderTasks(currentSelectedDay);
     });
 
     onValue(ref(db, 'tasks'), (snap) => {
