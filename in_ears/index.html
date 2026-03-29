@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng So Sánh Tai Nghe Chống Ồn (ANC)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="welcomeModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Ý kiến của toi💡</h3>
+            <p>R60i với R50i thông số khá giống nhau, chỉ khác độ chống âm và thiết kế (R60i đẹp hơn và điếc hơn) nhưng R50i lại rẻ hơn khác nhiều nên nếu k cần đẹp hay quá điếc mà tiết kiệm thì có thể chọn R50i.<br><br>Nhớ vuốt sang ngang nếu xem trên điện thoại</p>
+        </div>
+    </div>
+
+    <div id="noteBubble" class="floating-bubble" title="Mở lại lưu ý">
+        💡
+    </div>
+
+    <h2>So Sánh Tai Nghe True Wireless (Có ANC)</h2>
+
+    <div class="controls">
+        <button onclick="sortData('db')">Sắp xếp theo Độ ồn (dB) ↕</button>
+        <button onclick="sortData('price')">Sắp xếp theo Giá tiền ↕</button>
+    </div>
+
+    <p class="mobile-hint">👉 Vuốt bảng sang trái/phải để xem đầy đủ thông tin</p>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Mức ANC</th>
+                    <th>Phân loại</th>
+                    <th>Tên Model</th>
+                    <th>Giá (VNĐ)</th>
+                    <th>Chỉ bật ANC (Không nhạc)</th>
+                    <th>Bật ANC + Nhạc (50%)</th>
+                    <th>Nơi mua</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
