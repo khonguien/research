@@ -1,0 +1,499 @@
+/* Base Dark Theme Styling */
+body {
+    background-color: #161616;
+    color: #d4d4d4;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Typography */
+h1, h2 {
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom: 1px solid #333333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+}
+
+p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+/* Links */
+a {
+    color: #4da3ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Board Viewer Section --- */
+.viewer-section {
+    background-color: #222222;
+    border: 1px dashed #555;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.viewer-section h3 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.view-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.view-btn {
+    background-color: #333333;
+    color: #d4d4d4;
+    border: 1px solid #555555;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.view-btn:hover {
+    background-color: #444444;
+}
+
+.view-btn.active {
+    background-color: #00a63f; /* PCBWay Green */
+    color: white;
+    border-color: #00a63f;
+}
+
+#viewer-container {
+    min-height: 400px;
+    border: 1px solid #333;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#viewer-container img {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* --- BOM Table & Search --- */
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search-bar {
+    padding: 10px 15px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #222;
+    color: #d4d4d4;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #00a63f;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background-color: #222;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: #252525;
+}
+
+.part-number-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.designator {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+.copy-btn {
+    background-color: #333;
+    color: #d4d4d4;
+    border: 1px solid #555;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #444;
+}
+
+.component-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #555;
+}
+
+/* Custom Numbered List */
+.steps-list {
+    list-style: none;
+    counter-reset: step-counter;
+    padding-left: 0;
+}
+
+.steps-list > li {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 25px;
+}
+
+.steps-list > li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 30px;
+    height: 30px;
+    background-color: #00a63f;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+ul {
+    list-style-type: circle;
+    padding-left: 25px;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .table-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .search-bar {
+        max-width: 100%;
+    }
+}/* Base Dark Theme Styling */
+body {
+    background-color: #161616;
+    color: #d4d4d4;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Typography */
+h1, h2 {
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom: 1px solid #333333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+}
+
+p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+/* Links */
+a {
+    color: #4da3ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Board Viewer Section --- */
+.viewer-section {
+    background-color: #222222;
+    border: 1px dashed #555;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.viewer-section h3 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.view-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.view-btn {
+    background-color: #333333;
+    color: #d4d4d4;
+    border: 1px solid #555555;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.view-btn:hover {
+    background-color: #444444;
+}
+
+.view-btn.active {
+    background-color: #00a63f; /* PCBWay Green */
+    color: white;
+    border-color: #00a63f;
+}
+
+#viewer-container {
+    min-height: 400px;
+    border: 1px solid #333;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#viewer-container img {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* --- BOM Table & Search --- */
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search-bar {
+    padding: 10px 15px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #222;
+    color: #d4d4d4;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #00a63f;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background-color: #222;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: #252525;
+}
+
+.part-number-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.designator {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+.copy-btn {
+    background-color: #333;
+    color: #d4d4d4;
+    border: 1px solid #555;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #444;
+}
+
+.component-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #555;
+}
+
+/* Custom Numbered List */
+.steps-list {
+    list-style: none;
+    counter-reset: step-counter;
+    padding-left: 0;
+}
+
+.steps-list > li {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 25px;
+}
+
+.steps-list > li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 30px;
+    height: 30px;
+    background-color: #00a63f;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+ul {
+    list-style-type: circle;
+    padding-left: 25px;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .table-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .search-bar {
+        max-width: 100%;
+    }
+}

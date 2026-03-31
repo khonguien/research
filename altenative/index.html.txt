@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Assembly BOM & Guide</title>
+    <style>
+        /* Base Dark Theme Styling */
+        body {
+            background-color: #161616;
+            color: #d4d4d4;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Typography */
+        h1, h2 {
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        /* Highlighted Notes */
+        .note {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #e0e0e0;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Links */
+        a {
+            color: #4da3ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Lists */
+        ol {
+            font-size: 1.05rem;
+            padding-left: 20px;
+        }
+
+        ol > li {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: circle;
+            padding-left: 25px;
+            margin-top: 5px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        /* --- Board Viewer Section --- */
+        .viewer-section {
+            background-color: #222222;
+            border: 1px dashed #555;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .viewer-section h3 {
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .view-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .view-btn {
+            background-color: #333333;
+            color: #d4d4d4;
+            border: 1px solid #555555;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .view-btn:hover {
+            background-color: #444444;
+        }
+
+        .view-btn.active {
+            background-color: #00a63f; /* PCBWay Green */
+            color: white;
+            border-color: #00a63f;
+        }
+
+        #viewer-container {
+            min-height: 400px;
+            border: 1px solid #333;
+            background-color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        #viewer-container img {
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        /* --- BOM Table & Search --- */
+        .table-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .search-bar {
+            padding: 10px 15px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #222;
+            color: #d4d4d4;
+            width: 100%;
+            max-width: 300px;
+            font-size: 1rem;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: #00a63f;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        th {
+            background-color: #222;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        tbody tr:hover {
+            background-color: #252525;
+        }
+
+        .part-number-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .designator {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+
+        .copy-btn {
+            background-color: #333;
+            color: #d4d4d4;
+            border: 1px solid #555;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background-color 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: #444;
+        }
+
+        .component-img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #555;
+        }
+
+        /* Custom Numbered List for Assembly Guide */
+        .steps-list {
+            list-style: none;
+            counter-reset: step-counter;
+            padding-left: 0;
+        }
+
+        .steps-list > li {
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 25px;
+        }
+
+        .steps-list > li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            width: 30px;
+            height: 30px;
+            background-color: #00a63f;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .table-controls {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .search-bar {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+       <h1>Solution for Magnetometer Board</h1>
+        <p style="text-align: justify;">
+        I have been reviewing the author's previous research regarding alternative boards for the sensor. 
+        Luckily, I found that the magnetometer board used in both the previous studies and our current sensor is identical. Furthermore, the 
+        <a href="5X_ReSkin_BOM.xlsx" download>BOM</a>, 
+        <a href="Gerber.zip" download>Gerber files</a>, 
+        <a href="NC Drill.zip" download>NC Drill files</a>, and 
+        <a href="Pick Place.zip" download>Pick & Place files</a> are all open-source. 
+        <br><br>
+        I suggest contacting a local PCB manufacturer to fabricate the magnetometer board. This would significantly reduce <b>lead times</b>, as international shipping is currently our primary bottleneck.
+        <br><br>
+        The information below details the required components and the specifications for requesting a quote from the supplier.
+        </p>
+
+
+        <h2 id="bom">Bill of Materials (BOM)</h2>
+        <div class="table-controls">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Search BOM by part, mfr, or designator...">
+        </div>
+        <div class="table-responsive">
+            <table id="bomTable">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Image</th>
+                        <th>Part #</th>
+                        <th>Qty</th>
+                        <th>Designator</th>
+                        <th>Datasheet</th>
+                        <th>Mfr.</th>
+                        <th>Description</th>
+                        <th>Package / Footprint</th>
+                        <th>Notes</th>
+                        <th>Purchase Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://www.mouser.tw/images/mouserelectronics/sm/QFN_16_EP_t.jpg" alt="Component" class="component-img"></td>
+                        <td>
+                            <div class="part-number-cell">
+                                <span id="part1">MLX90393ELW-ABA-011-SP</span>
+                                <button class="copy-btn" onclick="copyText('part1', this)">Copy</button>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td class="designator">U1</td>
+                        <td><a href="https://www.google.com/search?q=MLX90393+datasheet+pdf" target="_blank">PDF</a></td>
+                        <td>Melexis</td>
+                        <td>SENSOR HALL I2C/SPI 16QFN</td>
+                        <td>16-VFQFN Exposed Pad</td>
+                        <td>alternate: MLX90393ELW-ABA-013-SP</td>
+                        <td>
+                            <a href="https://www.digikey.com/en/products/result?keywords=MLX90393ELW-ABA-011-SP" target="_blank">DigiKey</a><br>
+                            <a href="https://www.mouser.com/c/?q=MLX90393ELW-ABA-011-SP" target="_blank">Mouser</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="https://www.mouser.tw/images/mouserelectronics/sm/QFN_16_EP_t.jpg" class="component-img"></td>
+                        <td>
+                            <div class="part-number-cell">
+                                <span id="part2">MLX90393ELW-ABA-012-SP</span>
+                                <button class="copy-btn" onclick="copyText('part2', this)">Copy</button>
+                            </div>
+                        </td>
+                        <td>4</td>
+                        <td class="designator">U2,U3,U4,U5</td>
+                        <td><a href="https://www.google.com/search?q=MLX90393+datasheet+pdf" target="_blank">PDF</a></td>
+                        <td>Melexis</td>
+                        <td>SENSOR HALL I2C/SPI 16QFN</td>
+                        <td>16-VFQFN Exposed Pad</td>
+                        <td>-</td>
+                        <td>
+                            <a href="https://www.digikey.com/en/products/result?keywords=MLX90393ELW-ABA-012-SP" target="_blank">DigiKey</a><br>
+                            <a href="https://www.mouser.com/c/?q=MLX90393ELW-ABA-012-SP" target="_blank">Mouser</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="https://www.mouser.tw/images/yageo/images/AC_capacitor_SPL.jpg" alt="Component" class="component-img"></td>
+                        <td>
+                            <div class="part-number-cell">
+                                <span id="part3">CC0402JRX7R7BB104</span>
+                                <button class="copy-btn" onclick="copyText('part3', this)">Copy</button>
+                            </div>
+                        </td>
+                        <td>5</td>
+                        <td class="designator">C1-C5</td>
+                        <td><a href="https://www.google.com/search?q=CC0402JRX7R7BB104+datasheet+pdf" target="_blank">PDF</a></td>
+                        <td>Yageo</td>
+                        <td>CAP CER 0.1UF 16V X7R 0402</td>
+                        <td>0402 SMD</td>
+                        <td>-</td>
+                        <td>
+                            <a href="https://www.digikey.com/en/products/result?keywords=CC0402JRX7R7BB104" target="_blank">DigiKey</a><br>
+                            <a href="https://www.mouser.com/c/?q=CC0402JRX7R7BB104" target="_blank">Mouser</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>None</td>
+                        <td>
+                            <div class="part-number-cell">
+                                <span>-</span>
+                            </div>
+                        </td>
+                        <td>4</td>
+                        <td class="designator">C6-C9</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Leave pads exposed for later use</td>
+                        <td>-</td>
+                        <td>no solder paste</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><img src="https://www.mouser.tw/images/yageo/images/RC_series_SPL.jpg" alt="Component" class="component-img"></td>
+                        <td>
+                            <div class="part-number-cell">
+                                <span id="part5">RC0402FR-074K7L</span>
+                                <button class="copy-btn" onclick="copyText('part5', this)">Copy</button>
+                            </div>
+                        </td>
+                        <td>2</td>
+                        <td class="designator">R1,R2</td>
+                        <td><a href="https://www.google.com/search?q=RC0402FR-074K7L+datasheet+pdf" target="_blank">PDF</a></td>
+                        <td>Yageo</td>
+                        <td>RES 4.7K OHM 1% 0402</td>
+                        <td>0402 SMD</td>
+                        <td>-</td>
+                        <td>
+                            <a href="https://www.digikey.com/en/products/result?keywords=RC0402FR-074K7L" target="_blank">DigiKey</a><br>
+                            <a href="https://www.mouser.com/c/?q=RC0402FR-074K7L" target="_blank">Mouser</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><img src="https://mm.digikey.com/Volume0/opasdata/d220001/derivates/1/001/696/SM04B-SRSS-TB%28LF%29%28SN%29_sml.jpg" alt="Component" class="component-img"></td>
+                        <td>
+                            <div class="part-number-cell">
+                                <span id="part6">SM04B-SRSS-TB(LF)(SN)</span>
+                                <button class="copy-btn" onclick="copyText('part6', this)">Copy</button>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td class="designator">J1</td>
+                        <td><a href="https://www.google.com/search?q=SM04B-SRSS-TB(LF)(SN)+datasheet+pdf" target="_blank">PDF</a></td>
+                        <td>JST</td>
+                        <td>CONN HEADER SMD R/A 4POS 1MM</td>
+                        <td>SMD</td>
+                        <td>-</td>
+                        <td>
+                            <a href="https://www.digikey.com/en/products/result?keywords=SM04B-SRSS-TB(LF)(SN)" target="_blank">DigiKey</a><br>
+                            <a href="https://www.mouser.com/c/?q=SM04B-SRSS-TB(LF)(SN)" target="_blank">Mouser</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="viewer-section">
+            <h3>Interactive Board Viewer</h3>
+            <p style="text-align: justify;">Explore the sensor board layout directly in your browser. Switch between views below.
+            The sensor board layout is for overview purposes only; it includes only the MLX90393 IC and a connector header.
+            </p>
+            
+            <div class="view-controls">
+                <button class="view-btn active" onclick="switchView('top.png', this)">Top View</button>
+                <button class="view-btn" onclick="switchView('bottom.png', this)">Bottom View</button>
+                <button class="view-btn active" onclick="switchView('designator.png', this)">Designator</button>
+                <button class="view-btn active" onclick="switchView('circuit.png', this)">Magnetometer Board</button>
+                <!-- <button class="view-btn" onclick="switchView('gerber.png', this)">Gerber</button> -->
+                <!-- <button class="view-btn" onclick="switchView('wireframe.png', this)">Wireframe</button> -->
+            </div>
+            
+            <div id="viewer-container">
+                <img id="boardImage" src="top.png" alt="PCB Board View">
+            </div>
+        </div>
+
+        <h2 id="assembly-guide">Specifications for Requesting Quotes form Manufacturers </h2>
+        <ol class="steps-list">
+            <li>
+                Navigate to the supplier's website and select PCB Instant Quote option.
+            </li>
+            
+            <li>
+                For rigid boards, select <a href="https://www.pcbway.com/QuickOrderOnline.aspx" target="_blank">quick-order PCB</a> and upload the zip file here to "+Add Gerber File".
+            </li>
+            <li>
+                The rigid board is required for the magnetometer circuit. The athor recommended the below settings for the board, in sequential line-by-line order.
+                <ul>
+                    <li>Board type: Single Pieces</li>
+                    <li>Different Design in Panel: 1</li>
+                    <li>Size: (auto-populated) 20x29mm</li>
+                    <li><strong>Quantity: 5 is comfortable as the supplier often require a quote at least 5 units </strong></li>
+                    <li>Layers: 2 Layers</li>
+                    <li>Material: FR-4</li>
+                    <li>FR4-TG: TG130-140</li>
+                    <li><strong>Thickness: 0.6</strong></li>
+                    <li>Min Track/Spacing: 6/6mil</li>
+                    <li>Min Hole Size: 0.3mm</li>
+                    <li>Solder Mask: Green</li>
+                    <li>Silkscreen: White</li>
+                    <li>Edge Connector: No</li>
+                    <li>Surface Finish: HASL with Lead or <strong>Immersion gold (ENIG)</strong></li>
+                    <li>Via Process: Tenting Vias</li>
+                    <li>Finished Copper: 1oz Cu</li>
+                    <!-- <li>Extra pcb product number: [your choice] Note: It is a 3$ fee to avoid PCBWay extra text over the design. Purely aesthetic, no functional difference.</li> -->
+                    <li>Additional options: None</li>
+                </ul>
+            </li>
+            <li value="5" style="counter-set: step-counter 4;">
+                <strong>Assembly service</strong>
+                <ul>
+                    <li>Turnkey</li>
+                    <li>Board type: single pieces</li>
+                    <li><strong>Quantity: 2 to 3 units as presented with 1 unit for backup</strong></li>
+                    <li>Pay attention: No sensitive parts</li>
+                    <li>Number of unique parts: 6</li>
+                    <li>Number of SMD parts: 6</li>
+                    <li>Number of BGA/QFP parts: 0</li>
+                    <li>Number of through-hole parts: 0</li>
+                    <!-- <li>Detailed information of assembly: If you request assembly at the same time as boards, you may leave this empty. If you first requested boards, and assembly later on, put the Product No of the boards that you can find under "Under Review".</li> -->
+                </ul>
+            </li>
+        </ol>
+
+        <!-- <h2 id="finalization">Finalization & Testing</h2>
+        <ul>
+            <li>Connect the sensor assembly to a microcontroller via I2C or SPI interface.</li>
+            <li>Supply the correct operating voltage (refer to MLX90393 datasheet, typically 3.3V).</li>
+            <li>Scan the I2C bus to successfully detect the sensor addresses.</li>
+            <li>Execute read commands to retrieve data from the MLX90393 registers.</li>
+            <li>Display and verify the X, Y, and Z magnetic field values on your serial monitor or dashboard.</li>
+        </ul> -->
+    </div>
+
+    <script>
+        // --- 1. Copy to Clipboard ---
+        function copyText(elementId, btnElement) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // Visual feedback for dark theme
+                const originalText = btnElement.innerText;
+                btnElement.innerText = "Copied!";
+                btnElement.style.backgroundColor = "#00a63f";
+                btnElement.style.color = "#fff";
+                btnElement.style.borderColor = "#00a63f";
+                
+                setTimeout(() => {
+                    btnElement.innerText = originalText;
+                    btnElement.style.backgroundColor = "";
+                    btnElement.style.color = "";
+                    btnElement.style.borderColor = "";
+                }, 1500);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert("Failed to copy to clipboard.");
+            });
+        }
+
+        // --- 2. BOM Table Search/Filter ---
+        const searchInput = document.getElementById('searchInput');
+        const bomTable = document.getElementById('bomTable');
+        const tableRows = bomTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+        searchInput.addEventListener('keyup', function() {
+            const filter = searchInput.value.toLowerCase();
+
+            for (let i = 0; i < tableRows.length; i++) {
+                // Get all text content from the row
+                const rowText = tableRows[i].textContent.toLowerCase();
+                
+                if (rowText.includes(filter)) {
+                    tableRows[i].style.display = "";
+                } else {
+                    tableRows[i].style.display = "none";
+                }
+            }
+        });
+
+        // --- 3. Board View Switcher ---
+        function switchView(imageSrc, btnElement) {
+            // Update the image source
+            document.getElementById('boardImage').src = imageSrc;
+
+            // Remove 'active' class from all buttons
+            const buttons = document.querySelectorAll('.view-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Add 'active' class to the clicked button
+            btnElement.classList.add('active');
+        }
+    </script>
+</body>
+</html>
