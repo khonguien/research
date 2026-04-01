@@ -29,7 +29,7 @@
 
         <h2 id="bom">Bill of Materials (BOM)</h2>
         <p style="text-align: justify;">
-            <b>Note: </b>The below quantity is required for 1 unit of magnetometer board.
+            <b>Note: </b>The quantities listed below are required per unit of the magnetometer board.
         </p>
         <div class="table-controls">
             <input type="text" id="searchInput" class="search-bar" placeholder="Search BOM by part, mfr, or designator...">
@@ -187,6 +187,8 @@
             <div class="view-controls">
                 <button class="view-btn active" onclick="switchView('top.png', this)">Top View</button>
                 <button class="view-btn" onclick="switchView('bottom.png', this)">Bottom View</button>
+                <button class="view-btn" onclick="switchView('gerber.png', this)">Gerber</button>
+                <button class="view-btn" onclick="switchView('wireframe.png', this)">Wireframe</button>
                 <button class="view-btn" onclick="switchView('designator.png', this)">Designator</button>
                 <button class="view-btn" onclick="switchView('circuit.png', this)">Magnetometer</button>
             </div>
