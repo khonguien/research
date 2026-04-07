@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CPTemplate>
+  <AppVersion>29</AppVersion>
+  <CPSheet>
+    <GroupBox Label="Groupbox" PropName="Groupbox2" DefaultState="Expanded">
+      <Control Label="BaseWidth" PropName="BaseWidth" ApplyTo="Config" Type="NumericCtrl" ReadOnly="False" DefaultValue="45" />
+      <Control Label="BaseHeight" PropName="BaseHeight" ApplyTo="Config" Type="NumericCtrl" ReadOnly="False" DefaultValue="20" />
+    </GroupBox>
+  </CPSheet>
+</CPTemplate>

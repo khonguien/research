@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/CMakeFiles/triangle-download"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/CMakeFiles/triangle-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/CMakeFiles/triangle-download-complete.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/triangle-download-prefix/src/triangle-download-stamp/triangle-download-build.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/triangle-download-prefix/src/triangle-download-stamp/triangle-download-configure.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/triangle-download-prefix/src/triangle-download-stamp/triangle-download-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/triangle-download-prefix/src/triangle-download-stamp/triangle-download-install.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/triangle-download-prefix/src/triangle-download-stamp/triangle-download-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/triangle-download-prefix/src/triangle-download-stamp/triangle-download-patch.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/triangle-download-prefix/src/triangle-download-stamp/triangle-download-test.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/triangle/triangle-download-prefix/src/triangle-download-stamp/triangle-download-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"triangle-download"
+		],
+		"name" : "triangle-download"
+	}
+}

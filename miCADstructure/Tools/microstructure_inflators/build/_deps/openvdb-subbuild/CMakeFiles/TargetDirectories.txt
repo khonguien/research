@@ -1,0 +1,3 @@
+/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/CMakeFiles/openvdb-populate.dir
+/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/CMakeFiles/edit_cache.dir
+/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/CMakeFiles/rebuild_cache.dir

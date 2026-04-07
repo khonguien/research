@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmicro_mesh_fem.a CMakeFiles/micro_mesh_fem.dir/GlobalBenchmark.cc.o CMakeFiles/micro_mesh_fem.dir/MeshIO.cc.o CMakeFiles/micro_mesh_fem.dir/MSHFieldParser.cc.o CMakeFiles/micro_mesh_fem.dir/StringUtils.cc.o CMakeFiles/micro_mesh_fem.dir/Types.cc.o
+/usr/bin/ranlib libmicro_mesh_fem.a

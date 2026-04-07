@@ -1,0 +1,11 @@
+# Hashes of file build rules.
+1f11bfe4ad9d877b2b027cd6df56cd08 CMakeFiles/optional-download
+05e2208ae6fe226cd7bb6d30fcbe23e9 CMakeFiles/optional-download-complete
+2710a1182033338a4f53157988d4b661 optional-download-prefix/src/optional-download-stamp/optional-download-build
+797efeda72405a2b39efe8dc78a90fa8 optional-download-prefix/src/optional-download-stamp/optional-download-configure
+ec0714a39a1a9c371689fe18e7e4a4db optional-download-prefix/src/optional-download-stamp/optional-download-download
+240ad8231bd914be6a8f2822bdb07f3e optional-download-prefix/src/optional-download-stamp/optional-download-install
+595c7f59e99677032e4ba0c74581607f optional-download-prefix/src/optional-download-stamp/optional-download-mkdir
+d8f1ac5000030fa122bc73d2612c91ce optional-download-prefix/src/optional-download-stamp/optional-download-patch
+9f5cc274d9025c76a2b2a438d94e77ce optional-download-prefix/src/optional-download-stamp/optional-download-test
+4b8e6076d12c245c020468429d24eaaf optional-download-prefix/src/optional-download-stamp/optional-download-update

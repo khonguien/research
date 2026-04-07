@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/CMakeFiles/cgal-download"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/CMakeFiles/cgal-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/CMakeFiles/cgal-download-complete.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/cgal-download-prefix/src/cgal-download-stamp/cgal-download-build.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/cgal-download-prefix/src/cgal-download-stamp/cgal-download-configure.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/cgal-download-prefix/src/cgal-download-stamp/cgal-download-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/cgal-download-prefix/src/cgal-download-stamp/cgal-download-install.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/cgal-download-prefix/src/cgal-download-stamp/cgal-download-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/cgal-download-prefix/src/cgal-download-stamp/cgal-download-patch.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/cgal-download-prefix/src/cgal-download-stamp/cgal-download-test.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/cgal/cgal-download-prefix/src/cgal-download-stamp/cgal-download-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cgal-download"
+		],
+		"name" : "cgal-download"
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/CMakeFiles/libigl-download"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/CMakeFiles/libigl-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/CMakeFiles/libigl-download-complete.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/libigl-download-prefix/src/libigl-download-stamp/libigl-download-build.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/libigl-download-prefix/src/libigl-download-stamp/libigl-download-configure.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/libigl-download-prefix/src/libigl-download-stamp/libigl-download-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/libigl-download-prefix/src/libigl-download-stamp/libigl-download-install.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/libigl-download-prefix/src/libigl-download-stamp/libigl-download-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/libigl-download-prefix/src/libigl-download-stamp/libigl-download-patch.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/libigl-download-prefix/src/libigl-download-stamp/libigl-download-test.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/libigl/libigl-download-prefix/src/libigl-download-stamp/libigl-download-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"libigl-download"
+		],
+		"name" : "libigl-download"
+	}
+}

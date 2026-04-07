@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmicro_isosurface_inflator_cgal.a CMakeFiles/micro_isosurface_inflator_cgal.dir/CGALClippedVolumeMesher.cc.o CMakeFiles/micro_isosurface_inflator_cgal.dir/ConvexHullTriangulation.cc.o
+/usr/bin/ranlib libmicro_isosurface_inflator_cgal.a

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/CMakeFiles/tbb-download"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/CMakeFiles/tbb-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/CMakeFiles/tbb-download-complete.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/tbb-download-prefix/src/tbb-download-stamp/tbb-download-build.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/tbb-download-prefix/src/tbb-download-stamp/tbb-download-configure.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/tbb-download-prefix/src/tbb-download-stamp/tbb-download-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/tbb-download-prefix/src/tbb-download-stamp/tbb-download-install.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/tbb-download-prefix/src/tbb-download-stamp/tbb-download-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/tbb-download-prefix/src/tbb-download-stamp/tbb-download-patch.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/tbb-download-prefix/src/tbb-download-stamp/tbb-download-test.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/tbb/tbb-download-prefix/src/tbb-download-stamp/tbb-download-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"tbb-download"
+		],
+		"name" : "tbb-download"
+	}
+}

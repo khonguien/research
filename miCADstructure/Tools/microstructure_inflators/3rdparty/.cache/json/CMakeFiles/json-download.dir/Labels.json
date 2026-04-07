@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/CMakeFiles/json-download"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/CMakeFiles/json-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/CMakeFiles/json-download-complete.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/json-download-prefix/src/json-download-stamp/json-download-build.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/json-download-prefix/src/json-download-stamp/json-download-configure.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/json-download-prefix/src/json-download-stamp/json-download-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/json-download-prefix/src/json-download-stamp/json-download-install.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/json-download-prefix/src/json-download-stamp/json-download-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/json-download-prefix/src/json-download-stamp/json-download-patch.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/json-download-prefix/src/json-download-stamp/json-download-test.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/json/json-download-prefix/src/json-download-stamp/json-download-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"json-download"
+		],
+		"name" : "json-download"
+	}
+}

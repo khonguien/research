@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/CMakeFiles/nanoflann-download"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/CMakeFiles/nanoflann-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/CMakeFiles/nanoflann-download-complete.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/nanoflann-download-prefix/src/nanoflann-download-stamp/nanoflann-download-build.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/nanoflann-download-prefix/src/nanoflann-download-stamp/nanoflann-download-configure.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/nanoflann-download-prefix/src/nanoflann-download-stamp/nanoflann-download-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/nanoflann-download-prefix/src/nanoflann-download-stamp/nanoflann-download-install.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/nanoflann-download-prefix/src/nanoflann-download-stamp/nanoflann-download-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/nanoflann-download-prefix/src/nanoflann-download-stamp/nanoflann-download-patch.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/nanoflann-download-prefix/src/nanoflann-download-stamp/nanoflann-download-test.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/3rdparty/.cache/nanoflann/nanoflann-download-prefix/src/nanoflann-download-stamp/nanoflann-download-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"nanoflann-download"
+		],
+		"name" : "nanoflann-download"
+	}
+}

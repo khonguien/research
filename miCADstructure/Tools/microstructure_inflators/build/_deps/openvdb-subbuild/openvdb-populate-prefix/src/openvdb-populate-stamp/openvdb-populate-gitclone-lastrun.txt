@@ -1,0 +1,3 @@
+repository='https://github.com/AcademySoftwareFoundation/openvdb.git'
+module=''
+tag='origin'

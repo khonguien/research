@@ -1,0 +1,3 @@
+repository='external project URL'
+module='https://github.com/martinmoene/optional-lite/archive/v3.0.0.tar.gz'
+tag='MD5=a66541380c51c0d0a1e593cc2ca9fe8a'

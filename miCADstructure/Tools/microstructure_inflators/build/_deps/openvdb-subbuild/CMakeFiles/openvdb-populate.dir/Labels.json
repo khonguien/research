@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/CMakeFiles/openvdb-populate"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/CMakeFiles/openvdb-populate.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/CMakeFiles/openvdb-populate-complete.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/openvdb-populate-prefix/src/openvdb-populate-stamp/openvdb-populate-build.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/openvdb-populate-prefix/src/openvdb-populate-stamp/openvdb-populate-configure.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/openvdb-populate-prefix/src/openvdb-populate-stamp/openvdb-populate-download.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/openvdb-populate-prefix/src/openvdb-populate-stamp/openvdb-populate-install.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/openvdb-populate-prefix/src/openvdb-populate-stamp/openvdb-populate-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/openvdb-populate-prefix/src/openvdb-populate-stamp/openvdb-populate-patch.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/openvdb-populate-prefix/src/openvdb-populate-stamp/openvdb-populate-test.rule"
+		},
+		{
+			"file" : "/mnt/d/eFlesh-main/eFlesh-main/microstructure/microstructure_inflators/build/_deps/openvdb-subbuild/openvdb-populate-prefix/src/openvdb-populate-stamp/openvdb-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"openvdb-populate"
+		],
+		"name" : "openvdb-populate"
+	}
+}
